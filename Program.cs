@@ -42,7 +42,12 @@ namespace Classes_as_the_basis_of_C__Homework
             var s1 = new Stack("a", "b", "c");
             var s2 = new Stack("1", "2", "3");
             s1.Merge(s2);
-            Console.WriteLine($"Последний элемент из объединенного Stack s1: " + s1.PopfromStack());
+            Console.WriteLine($"Последний элемент из объединенного Stack s1: {s1.PopfromStack()}");
+
+            //Проверка доп.задания 2
+            var concatenatedStack = Stack.Concat(s1, new Stack("Y","V","W","X","Y","Z"));
+            Console.WriteLine($"Concatenated Top:  {concatenatedStack.Top}");               //Вывод: Concatenated Top: X
+
 
         }
     }

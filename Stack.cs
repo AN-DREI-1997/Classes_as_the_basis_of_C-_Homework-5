@@ -95,5 +95,31 @@ namespace Classes_as_the_basis_of_C__Homework
         /// <returns>bool</returns>
         public bool IsEmpty() => size == 0;
 
+        //Доп.задание 2
+        /// <summary>
+        /// Статический метод Concat, который принимает неограниченное количество стеков и возвращать новый стек с элементами в обратном порядке.
+        /// </summary>
+        /// <param name="stacks"></param>
+        /// <returns>Stack()</returns>
+        public static Stack Concat(params Stack[] stacks)
+        {
+            var result = new Stack();
+            foreach (var stack in stacks)
+            {
+                var itemsToConcat = new List<string>();
+                while (!stack.IsEmpty())
+                {
+                    itemsToConcat.Add(stack.PopfromStack());
+                }
+
+                foreach (var item in itemsToConcat)
+                {
+                    result.AddinStask(item);
+                }
+            }
+            return result;
+        }
+
+
     }
 }
